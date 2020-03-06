@@ -7,32 +7,32 @@ public class TestPeople {
 
     @Test
     public void testAdd(){
-        People people = new People();
-        Person p= new Person(1);
-        people.add(p);
-        Assert.assertTrue(people.contains(p));
+        Instructors instructors=Instructors.getInstance();
+        Instructor instructor = new Instructor(1);
+        instructors.add(instructor);
+        Assert.assertTrue(instructors.contains(instructor));
     }
 
     @Test
     public void testRemove(){
-        People people = new People();
-        Person p= new Person(1);
+        Instructors instructors=Instructors.getInstance();
+        Instructor instructor = new Instructor(1);
 
-        people.add(p);
-        people.remove(p);
+        instructors.add(instructor);
+        instructors.remove(instructor);
 
-        Assert.assertFalse(people.contains(p));
+        Assert.assertFalse(instructors.contains(instructor));
 
 
     }
     @Test
     public void testFindById(){
-        People people = new People();
-        Person p= new Person(1);
-        people.add(p);
-        people.findById(p.getId());
-        Person p1= people.findById(p.getId());
-        Assert.assertEquals(p,p1);
+        Instructors instructors=Instructors.getInstance();
+        Instructor instructor = new Instructor(2);
+        instructors.add(instructor);
+        instructors.findById(instructor.getId());
+        Assert.assertEquals(instructor.getId(),instructors.findById(instructor.getId()).getId());
+
 
     }
 
